@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+  <title>Kiem tra so nguyen to</title>  
+  
+  
+  </head>
+</head>
+<body>
+    <p>Nhap so can kiem tra:</p>
+    <input id = "so_can_kiem_tra">
+  <button onclick="in_gia_tri()">
+    ok
+  </button>
+  <p id="in_ra"></p>
+    <script>
+    
+    var snt = function(a) {
+        
+        if (a<2)    return false
+        for(var i = 2; i*i<=a; i++){
+            if(a%i==0) return false
+        }
+        return true
+    }
+    var in_gia_tri = function(a){
+        var a = parseInt(document.getElementById("so_can_kiem_tra").value)
+        if (isNaN(a)){
+            document.getElementById("in_ra").innerHTML = "Hay nhap mot so!"
+            return
+        }
+        if(snt(a)) document.getElementById("in_ra").innerHTML = "YES"
+        else document.getElementById("in_ra").innerHTML = "NO"
+    }   
+  </script>
+</body>
